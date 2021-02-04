@@ -1,4 +1,5 @@
 # aoe2-civs
+## simple project with Vue-cli and components
 
 ## Project setup
 ```

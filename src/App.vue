@@ -1,38 +1,42 @@
 <template>
-  <div id="app">
-    <Card
-      v-for="(civ, i) in civdb"
-      v-bind:key="i"
-      :name="civ.name"
-      :imgUrl="civ.imgUrl"
-    />
+  <div id="app" class="flex">
+
+    <CivList @setCiv="civName = $event" />
+    <CivDetails :name="civName" />
   </div>
 </template>
 
 <script>
 import civdb from "./assets/database/civdb.js";
-import Card from "./components/Card.vue";
+import CivList from "./components/CivList.vue";
+import CivDetails from "./components/CivDetails.vue"
 
 export default {
   name: "App",
   components: {
-    Card
+    CivList,
+    CivDetails
   },
   data() {
     return {
       civdb: civdb,
-    }
+      civName: "",
+    };
+  },
+  methods: {
+
   }
 };
 </script>
 
 <style lang="scss">
+@import "./assets/scss/variables";
+@import "./assets/scss/commons";
+@import "./assets/scss/utilities";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

@@ -1,5 +1,6 @@
+<!-- A single card for a civilization -->
 <template>
-  <div>
+  <div class="civ" @click="$emit('setCiv', name)">
     <h1>{{ name }}</h1>
     <img :src="'assets/images' + imgUrl" alt="img non caricata">
   </div>
@@ -7,11 +8,11 @@
 
 <script>
 export default {
-  name: "Card",
+  name: "Civ",
   props: ["name", "imgUrl"]
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+@import "../assets/scss/civ";
 </style>

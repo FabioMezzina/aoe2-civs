@@ -1,0 +1,17 @@
+// Flex utilities
+.flex {
+  display: flex;
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+// Text utilities
+.text-center {
+  text-align: center;
+}
